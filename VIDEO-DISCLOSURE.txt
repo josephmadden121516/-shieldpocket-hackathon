@@ -1,0 +1,6 @@
+OPENING LINE (say this first in the demo video, then start the tour):
+
+"Everything in this repo was built during the hackathon — the only things
+from outside the event are fresh framework installs, public threat-data feeds, and the hosting shells."
+
+Keep this file's list identical to the README disclosure and HACKATHON.md.

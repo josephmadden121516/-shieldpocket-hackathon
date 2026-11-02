@@ -1,0 +1,20 @@
+# Supabase local configuration for the hackathon submission.
+# Link a project and deploy the functions before judging:
+#   npx supabase link --project-ref YOUR_PROJECT_REF
+#   npx supabase functions deploy analyze-threat
+#   npx supabase functions deploy sophia-chat
+#   npx supabase functions deploy generate-remediation
+
+project_id = "shieldpocket-hackathon"
+
+[api]
+enabled = true
+
+[functions.analyze-threat]
+enabled = true
+
+[functions.sophia-chat]
+enabled = true
+
+[functions.generate-remediation]
+enabled = true

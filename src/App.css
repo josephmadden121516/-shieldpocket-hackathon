@@ -1,0 +1,80 @@
+.shell {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.shell-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.shell-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.shell-header p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.language-toggle {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.language-toggle button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.9rem;
+}
+
+.language-toggle button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.demo-note {
+  border: 1px dashed var(--line);
+  background: var(--card);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.demo-section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 1rem;
+}
+
+.demo-section > h2 {
+  margin-top: 0;
+}
+
+.section-lede {
+  color: var(--muted);
+  margin-top: -0.5rem;
+}
+
+.assessment-field {
+  width: 100%;
+  min-height: 6rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+}
