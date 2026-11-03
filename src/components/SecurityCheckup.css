@@ -1,0 +1,54 @@
+.checkup-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.checkup-progress {
+  height: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  margin: 0.6rem 0 1rem;
+}
+
+.checkup-bar {
+  height: 100%;
+  background: var(--accent);
+}
+
+.checkup-group {
+  margin-bottom: 0.8rem;
+}
+
+.checkup-group h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.checkup-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.checkup-group label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.checkup-group input {
+  margin-top: 0.25rem;
+}
+
+.checkup-reset {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  margin-top: 0.4rem;
+}

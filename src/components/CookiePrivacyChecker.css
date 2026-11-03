@@ -1,0 +1,40 @@
+.privacy-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.privacy-question {
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 0;
+}
+
+.privacy-question p {
+  margin: 0 0 0.5rem;
+}
+
+.privacy-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.privacy-buttons button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.35rem 1rem;
+}
+
+.privacy-buttons button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.privacy-guidance {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.privacy-score {
+  font-weight: 600;
+}

@@ -1,0 +1,40 @@
+.firewall-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.firewall-question {
+  border-top: 1px solid var(--line);
+  padding: 0.7rem 0;
+}
+
+.firewall-question p {
+  margin: 0 0 0.5rem;
+}
+
+.firewall-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.firewall-buttons button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.35rem 1rem;
+}
+
+.firewall-buttons button[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.firewall-guidance {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.firewall-score {
+  font-weight: 600;
+}

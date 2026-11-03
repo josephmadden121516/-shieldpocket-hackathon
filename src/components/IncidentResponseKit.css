@@ -1,0 +1,44 @@
+.incident-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.incident-playbook {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.7rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.incident-playbook summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.incident-playbook ol {
+  margin: 0.5rem 0 0.2rem;
+  padding-left: 1.3rem;
+}
+
+.incident-playbook li {
+  margin-bottom: 0.4rem;
+}
+
+.incident-playbook label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.incident-playbook input {
+  margin-top: 0.25rem;
+}
+
+.incident-reset {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.9rem;
+}

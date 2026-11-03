@@ -20,6 +20,14 @@ import { SyntheticAuditLab } from './components/SyntheticAuditLab'
 import { CyberInsuranceReadiness } from './components/CyberInsuranceReadiness'
 import { PhishDrillGenerator } from './components/PhishDrillGenerator'
 import { Faq } from './components/Faq'
+import { SecurityCheckup } from './components/SecurityCheckup'
+import { DevicePosture } from './components/DevicePosture'
+import { FirewallCheckup } from './components/FirewallCheckup'
+import { CookiePrivacyChecker } from './components/CookiePrivacyChecker'
+import { PasswordChecker } from './components/PasswordChecker'
+import { ManualChecks } from './components/ManualChecks'
+import { HardeningGuides } from './components/HardeningGuides'
+import { IncidentResponseKit } from './components/IncidentResponseKit'
 import CisoMetricsWidget from './CisoMetricsWidget'
 
 type Language = 'en' | 'es'
@@ -235,6 +243,46 @@ export default function App() {
       <section className="demo-section" id="risk-metrics">
         <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
         <CisoMetricsWidget />
+      </section>
+
+      <section className="demo-section" id="security-checkup">
+        <h2>{isEs ? 'Revisión de seguridad' : 'Security checkup'}</h2>
+        <SecurityCheckup language={language} />
+      </section>
+
+      <section className="demo-section" id="device-posture">
+        <h2>{isEs ? 'Postura del dispositivo' : 'Device posture'}</h2>
+        <DevicePosture language={language} />
+      </section>
+
+      <section className="demo-section" id="firewall-checkup">
+        <h2>{isEs ? 'Revisión de firewall' : 'Firewall checkup'}</h2>
+        <FirewallCheckup language={language} />
+      </section>
+
+      <section className="demo-section" id="cookie-checker">
+        <h2>{isEs ? 'Cookies y privacidad' : 'Cookie and privacy check'}</h2>
+        <CookiePrivacyChecker language={language} />
+      </section>
+
+      <section className="demo-section" id="password-checker">
+        <h2>{isEs ? 'Revisor de contraseñas' : 'Password checker'}</h2>
+        <PasswordChecker language={language} />
+      </section>
+
+      <section className="demo-section" id="manual-checks">
+        <h2>{isEs ? 'Verificaciones manuales' : 'Manual checks'}</h2>
+        <ManualChecks language={language} />
+      </section>
+
+      <section className="demo-section" id="hardening-guides">
+        <h2>{isEs ? 'Guías de refuerzo' : 'Hardening guides'}</h2>
+        <HardeningGuides language={language} />
+      </section>
+
+      <section className="demo-section" id="incident-kit">
+        <h2>{isEs ? 'Kit de respuesta' : 'Incident response kit'}</h2>
+        <IncidentResponseKit language={language} />
       </section>
 
       <section className="demo-section" id="faq">
