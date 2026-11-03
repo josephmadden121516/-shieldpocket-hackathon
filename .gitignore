@@ -27,3 +27,5 @@ supabase/.temp/
 *backup*
 *.zip
 *.tar.gz
+.vercel
+.env*
