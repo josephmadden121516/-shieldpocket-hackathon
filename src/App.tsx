@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import './App.css'
 import { getSampleActivityEvents, getSampleReports } from './lib/demoData'
+import { Overview } from './components/Overview'
 import { WarRoomDemo } from './components/WarRoomDemo'
 import { ThreatDigest } from './components/ThreatDigest'
 import { CveTriageAssistant } from './components/CveTriageAssistant'
@@ -114,7 +115,17 @@ export default function App() {
           : 'Sample-data demo mode: no sign-in needed. AI features need the backend configured; without it they show a notice instead of calling the server.'}
       </div>
 
-      <section className="demo-section" aria-label={isEs ? 'Demostración guiada' : 'Guided demo'}>
+      <section className="demo-section" id="overview" aria-label={isEs ? 'Resumen' : 'Overview'}>
+        <h2>{isEs ? 'Resumen' : 'Overview'}</h2>
+        <p className="section-lede">
+          {isEs
+            ? 'Todos los módulos en un lugar; salta a cualquiera.'
+            : 'Every module in one place; jump to any of them.'}
+        </p>
+        <Overview language={language} />
+      </section>
+
+      <section className="demo-section" id="war-room" aria-label={isEs ? 'Demostración guiada' : 'Guided demo'}>
         <h2>{isEs ? 'Sala de guerra guiada' : 'Guided war room'}</h2>
         <p className="section-lede">
           {isEs
@@ -160,32 +171,32 @@ export default function App() {
         <UsageMeter language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="phishing-game">
         <h2>{isEs ? 'Juego: detecta el phishing' : 'Spot-the-phish game'}</h2>
         <PhishingGame language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="link-checker">
         <h2>{isEs ? 'Verificador de enlaces' : 'Link safety checker'}</h2>
         <LinkSafetyChecker language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="scam-analyzer">
         <h2>{isEs ? 'Analizador de mensajes' : 'Scam-text analyzer'}</h2>
         <ScamTextAnalyzer language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="threat-watcher">
         <h2>{isEs ? 'Vigilante de amenazas' : 'Threat watcher'}</h2>
         <ThreatWatcher language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="badge-studio">
         <h2>{isEs ? 'Estudio de insignias' : 'Badge studio'}</h2>
         <BadgeStudio language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="compliance-map">
         <h2>{isEs ? 'Mapa de cumplimiento' : 'Compliance mapping'}</h2>
         <p className="section-lede">
           {isEs
@@ -201,32 +212,32 @@ export default function App() {
         <ComplianceFrameworkMapper language={language} assessment={assessmentValue} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="attack-simulator">
         <h2>{isEs ? 'Simulador de ataque' : 'Attack simulator'}</h2>
         <AttackTreeSimulator language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="audit-lab">
         <h2>{isEs ? 'Laboratorio de auditoría' : 'Audit lab'}</h2>
         <SyntheticAuditLab language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="insurance-readiness">
         <h2>{isEs ? 'Preparación para ciberseguro' : 'Cyber-insurance readiness'}</h2>
         <CyberInsuranceReadiness language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="phish-drills">
         <h2>{isEs ? 'Simulacros de phishing' : 'Phishing drills'}</h2>
         <PhishDrillGenerator language={language} />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="risk-metrics">
         <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
         <CisoMetricsWidget />
       </section>
 
-      <section className="demo-section">
+      <section className="demo-section" id="faq">
         <h2>{isEs ? 'Preguntas frecuentes' : 'Frequently asked questions'}</h2>
         <Faq language={language} />
       </section>
