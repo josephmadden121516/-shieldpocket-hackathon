@@ -57,23 +57,25 @@ export function Overview({ language }: OverviewProps) {
     <div className="overview">
       <label className="overview-jump">
         {isEs ? 'Ir a una sección:' : 'Jump to a section:'}
-        <select
-          defaultValue=""
-          onChange={(event) => {
-            if (event.target.value) scrollToSection(event.target.value)
-            event.target.value = ''
-          }}
-          aria-label={isEs ? 'Secciones' : 'Sections'}
-        >
-          <option value="" disabled>
-            {isEs ? 'Elige una sección…' : 'Choose a section…'}
-          </option>
-          {SECTIONS.map((section) => (
-            <option key={section.id} value={section.id}>
-              {isEs ? section.titleEs : section.titleEn}
+        <span className="overview-select-wrap">
+          <select
+            defaultValue=""
+            onChange={(event) => {
+              if (event.target.value) scrollToSection(event.target.value)
+              event.target.value = ''
+            }}
+            aria-label={isEs ? 'Secciones' : 'Sections'}
+          >
+            <option value="" disabled>
+              {isEs ? 'Elige una sección…' : 'Choose a section…'}
             </option>
-          ))}
-        </select>
+            {SECTIONS.map((section) => (
+              <option key={section.id} value={section.id}>
+                {isEs ? section.titleEs : section.titleEn}
+              </option>
+            ))}
+          </select>
+        </span>
       </label>
       <p className="overview-hint">
         {isEs
