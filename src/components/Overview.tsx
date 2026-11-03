@@ -14,6 +14,13 @@ interface SectionLink {
 
 const SECTIONS: SectionLink[] = [
   {
+    id: 'overview',
+    titleEn: 'Overview (top)',
+    titleEs: 'Resumen (arriba)',
+    blurbEn: 'Back to this map',
+    blurbEs: 'Volver a este mapa',
+  },
+  {
     id: 'war-room',
     titleEn: 'Guided war room',
     titleEs: 'Sala de guerra guiada',
