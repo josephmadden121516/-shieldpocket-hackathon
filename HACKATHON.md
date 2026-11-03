@@ -17,12 +17,13 @@ daily cap. The project was built with the Muse Code coding agent.
 
 ## Features and commits
 
-Pending first commits — fill this table after `git init` using the fresh
-hashes from THIS repo, never hashes from any other checkout.
-
 | Commit | Date | Feature |
 |---|---|---|
-| | | |
+| `388353a` | Nov 2 | Event-only app shell (fresh configs, App, styles, Supabase client) |
+| `388353a` | Nov 2 | Guided war-room tour + digest, CVE triage, patch, timeline, briefing, usage meter |
+| `388353a` | Nov 2 | Spot-the-phish game, link checker, scam-text analyzer, threat watcher, badge studio |
+| `388353a` | Nov 2 | Compliance mapper, cyber-insurance readiness, attack simulator, audit lab, phishing drills, risk metrics |
+| `388353a` | Nov 2 | Edge functions (`analyze-threat`, `sophia-chat`, `generate-remediation`) on Muse Spark with live metering |
 
 ## Outside-event items reused
 
