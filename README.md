@@ -33,7 +33,7 @@ Then open the printed localhost URL. No sign-in is needed: the app opens directl
 
 Without backend credentials the local run still works for the badge studio, scam-text analyzer, risk metrics, local board-briefing generation, and the usage-meter display; AI features show a "not configured" message instead of calling the backend.
 
-Hosted build (same code, backend configured): https://shieldpocket-ai-orcin.vercel.app
+Hosted build (same code, backend configured): https://cybershield-ai-orcin.vercel.app
 
 ## Backend setup (for your own deploy, not needed to judge)
 
