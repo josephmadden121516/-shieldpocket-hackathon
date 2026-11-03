@@ -82,28 +82,49 @@ interface ModelResult {
   usage: { prompt_tokens: number; completion_tokens: number };
 }
 
+async function fetchModel(apiKey: string, body: unknown): Promise<Response> {
+  // The model API occasionally flakes (rate limits, 5xx). Retry those with
+  // backoff; surface anything else immediately so real errors stay visible.
+  let lastError: unknown = new Error("Model request failed.");
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const response = await fetch(META_API_URL, {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+      if (response.ok) return response;
+      lastError = new Error(`Model request failed with status ${response.status}.`);
+      const retryable = response.status === 429 || response.status >= 500;
+      if (!retryable || attempt === 3) throw lastError;
+      await new Promise((resolve) => setTimeout(resolve, 750 * attempt));
+    } catch (error) {
+      if (error instanceof TypeError && attempt < 3) {
+        lastError = error;
+        await new Promise((resolve) => setTimeout(resolve, 750 * attempt));
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw lastError;
+}
+
 async function callModel(
   apiKey: string,
   system: string,
   user: string,
 ): Promise<ModelResult> {
-  const response = await fetch(META_API_URL, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: system },
-        { role: "user", content: user },
-      ],
-    }),
+  const response = await fetchModel(apiKey, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: system },
+      { role: "user", content: user },
+    ],
   });
-  if (!response.ok) {
-    throw new Error(`Model request failed with status ${response.status}.`);
-  }
   const payload: unknown = await response.json();
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
     throw new Error("Model returned an unreadable payload.");
@@ -133,29 +154,19 @@ async function callModelWithImage(
   text: string,
   imageDataUrl: string,
 ): Promise<ModelResult> {
-  const response = await fetch(META_API_URL, {
-    method: "POST",
-    headers: {
-      "Authorization": `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [
-        { role: "system", content: system },
-        {
-          role: "user",
-          content: [
-            { type: "text", text },
-            { type: "image_url", image_url: { url: imageDataUrl } },
-          ],
-        },
-      ],
-    }),
+  const response = await fetchModel(apiKey, {
+    model: MODEL,
+    messages: [
+      { role: "system", content: system },
+      {
+        role: "user",
+        content: [
+          { type: "text", text },
+          { type: "image_url", image_url: { url: imageDataUrl } },
+        ],
+      },
+    ],
   });
-  if (!response.ok) {
-    throw new Error(`Model request failed with status ${response.status}.`);
-  }
   const payload: unknown = await response.json();
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
     throw new Error("Model returned an unreadable payload.");
@@ -542,6 +553,13 @@ Deno.serve(async (req) => {
     return jsonResponse({ pack, usage: gameResult.usage });
   } catch (error) {
     console.error("analyze-threat failed.", error);
+    const detail = error instanceof Error ? error.message : "";
+    if (detail.startsWith("The model declined the request:")) {
+      return jsonResponse({ error: detail }, 502);
+    }
+    if (/^Model request failed with status \d+\.$/.test(detail)) {
+      return jsonResponse({ error: `The AI service request failed (${detail.slice(24, -1)}).` }, 502);
+    }
     return jsonResponse({ error: "The AI service request failed." }, 502);
   }
 });

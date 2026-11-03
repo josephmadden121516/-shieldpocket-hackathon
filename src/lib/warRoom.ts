@@ -134,8 +134,8 @@ export function useWarRoomCue(step: WarRoomStepId, handler: () => void | Promise
 
 export const WAR_ROOM_SCENARIO = {
   triageInput: {
-    en: 'CVE-2024-3094 — xz-utils supply-chain backdoor (versions 5.6.0/5.6.1). Build server runs xz 5.6.1, SSH exposed to the internet, used for release builds. No customer data on the host. Scanner flags it Critical. Need defensive priority: isolate, rebuild, rotate keys?',
-    es: 'CVE-2024-3094 — puerta trasera de cadena de suministro en xz-utils (versiones 5.6.0/5.6.1). El servidor de compilación usa xz 5.6.1, SSH expuesto a internet, usado para versiones de lanzamiento. Sin datos de clientes en el equipo. El escáner lo marca Crítico. Prioridad defensiva: ¿aislar, reconstruir, rotar claves?',
+    en: 'A 2024 compression-library vulnerability affects our build server version 5.6.1, SSH exposed to the internet, used for release builds. No customer data on the host. Scanner flags it Critical. Need defensive priority: isolate, rebuild, rotate keys? Reference: CVE-2024-3094.',
+    es: 'El escáner marca un hallazgo como Crítico en un servidor de compilación sin datos de clientes, SSH expuesto a internet. Es una biblioteca de compresión versión 5.6.1 usada para versiones. ¿Cuál es la prioridad defensiva: aislar, reconstruir, rotar claves? Referencia: CVE-2024-3094.',
   },
   patch: {
     vulnId: 'CVE-2024-3094',
