@@ -1,0 +1,54 @@
+.threat-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.threat-analyzer textarea {
+  width: 100%;
+  min-height: 7rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.threat-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.threat-actions button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+}
+
+.threat-actions button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.threat-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.threat-error {
+  color: #b42318;
+}
+
+.threat-result h3 {
+  margin-bottom: 0.3rem;
+}
+
+.threat-text {
+  white-space: pre-wrap;
+}
+
+.threat-saved {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

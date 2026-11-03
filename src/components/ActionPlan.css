@@ -1,0 +1,44 @@
+.action-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.action-plan textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.action-plan button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+  margin-top: 0.6rem;
+}
+
+.action-plan button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.action-error {
+  color: #b42318;
+}
+
+.action-text {
+  white-space: pre-wrap;
+}
+
+.action-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.action-saved {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

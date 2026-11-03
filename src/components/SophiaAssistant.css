@@ -1,0 +1,92 @@
+.sophia-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.sophia-thread {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  min-height: 8rem;
+  max-height: 22rem;
+  overflow-y: auto;
+  margin: 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sophia-empty {
+  color: var(--muted);
+}
+
+.sophia-message {
+  margin: 0;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  white-space: pre-wrap;
+}
+
+.sophia-user {
+  background: var(--paper);
+  align-self: flex-end;
+}
+
+.sophia-assistant .sophia-assistant {
+  background: none;
+}
+
+.sophia-thinking {
+  color: var(--muted);
+}
+
+.sophia-error {
+  color: #b42318;
+}
+
+.sophia-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sophia-form input {
+  flex: 1;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  min-width: 0;
+}
+
+.sophia-form button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.sophia-form button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.sophia-options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.6rem;
+}
+
+.sophia-options label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sophia-options button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.9rem;
+}

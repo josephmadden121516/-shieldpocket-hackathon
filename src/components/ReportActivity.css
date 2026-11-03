@@ -1,0 +1,40 @@
+.report-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.report-field {
+  display: block;
+  margin: 0.7rem 0;
+  font-weight: 600;
+}
+
+.report-field select,
+.report-field input,
+.report-field textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  font-weight: 400;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  margin-top: 0.3rem;
+  background: var(--card);
+}
+
+.report-activity button[type='submit'] {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+}
+
+.report-activity button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.report-confirmation {
+  color: var(--muted);
+}

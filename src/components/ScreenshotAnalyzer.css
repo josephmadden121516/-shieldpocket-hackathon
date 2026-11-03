@@ -1,0 +1,73 @@
+.screenshot-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.screenshot-analyzer input[type='file'] {
+  margin: 0.6rem 0;
+}
+
+.screenshot-file {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem;
+}
+
+.screenshot-analyzer textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+}
+
+.screenshot-consent {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin: 0.7rem 0;
+  cursor: pointer;
+}
+
+.screenshot-consent input {
+  margin-top: 0.25rem;
+}
+
+.screenshot-analyzer button[type='submit'] {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+}
+
+.screenshot-analyzer button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.screenshot-error {
+  color: #b42318;
+}
+
+.screenshot-text {
+  white-space: pre-wrap;
+}
+
+.screenshot-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+}
+
+.screenshot-actions button {
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 0.5rem;
+  padding: 0.45rem 1rem;
+}
+
+.screenshot-saved {
+  color: var(--muted);
+  font-size: 0.9rem;
+}

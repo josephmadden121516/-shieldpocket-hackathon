@@ -28,6 +28,12 @@ import { PasswordChecker } from './components/PasswordChecker'
 import { ManualChecks } from './components/ManualChecks'
 import { HardeningGuides } from './components/HardeningGuides'
 import { IncidentResponseKit } from './components/IncidentResponseKit'
+import { ThreatAnalyzer } from './components/ThreatAnalyzer'
+import { ScreenshotAnalyzer } from './components/ScreenshotAnalyzer'
+import { ReportActivity } from './components/ReportActivity'
+import { SavedReports } from './components/SavedReports'
+import { ActionPlan } from './components/ActionPlan'
+import { SophiaAssistant } from './components/SophiaAssistant'
 import CisoMetricsWidget from './CisoMetricsWidget'
 
 type Language = 'en' | 'es'
@@ -243,6 +249,36 @@ export default function App() {
       <section className="demo-section" id="risk-metrics">
         <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
         <CisoMetricsWidget />
+      </section>
+
+      <section className="demo-section" id="threat-analyzer">
+        <h2>{isEs ? 'Analizador de amenazas' : 'Threat analyzer'}</h2>
+        <ThreatAnalyzer language={language} />
+      </section>
+
+      <section className="demo-section" id="screenshot-analyzer">
+        <h2>{isEs ? 'Análisis de captura' : 'Screenshot analysis'}</h2>
+        <ScreenshotAnalyzer language={language} />
+      </section>
+
+      <section className="demo-section" id="report-activity">
+        <h2>{isEs ? 'Reportar actividad' : 'Report activity'}</h2>
+        <ReportActivity language={language} />
+      </section>
+
+      <section className="demo-section" id="saved-reports">
+        <h2>{isEs ? 'Informes guardados' : 'Saved reports'}</h2>
+        <SavedReports language={language} />
+      </section>
+
+      <section className="demo-section" id="action-plan">
+        <h2>{isEs ? 'Plan de acción' : 'Action plan'}</h2>
+        <ActionPlan language={language} />
+      </section>
+
+      <section className="demo-section" id="sophia-assistant">
+        <h2>{isEs ? 'Asistente Sophia' : 'Sophia assistant'}</h2>
+        <SophiaAssistant language={language} />
       </section>
 
       <section className="demo-section" id="security-checkup">
