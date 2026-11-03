@@ -98,7 +98,10 @@ async function fetchModel(apiKey: string, body: unknown): Promise<Response> {
       });
       if (response.ok) return response;
       lastError = new Error(`Model request failed with status ${response.status}.`);
-      const retryable = response.status === 429 || response.status >= 500;
+      // Retry rate limits and server errors; retry 400s once since the
+      // model's input filter has proven nondeterministic during rollouts.
+      const retryable = response.status === 429 || response.status >= 500 ||
+        (response.status === 400 && attempt === 1);
       if (!retryable || attempt === 3) throw lastError;
       await new Promise((resolve) => setTimeout(resolve, 750 * attempt));
     } catch (error) {
@@ -558,7 +561,8 @@ Deno.serve(async (req) => {
       return jsonResponse({ error: detail }, 502);
     }
     if (/^Model request failed with status \d+\.$/.test(detail)) {
-      return jsonResponse({ error: `The AI service request failed (${detail.slice(24, -1)}).` }, 502);
+      const status = detail.replace(/^Model request failed with status (\d+)\.$/, '$1');
+      return jsonResponse({ error: `The AI service request failed (model status ${status}).` }, 502);
     }
     return jsonResponse({ error: "The AI service request failed." }, 502);
   }
