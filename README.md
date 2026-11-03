@@ -29,11 +29,19 @@ npm install
 npm run dev
 ```
 
-Then open the printed localhost URL. No sign-in is needed: the app opens directly in sample-data demo mode.
+Then open the printed localhost URL. No sign-in is needed: the app opens directly in sample-data demo mode. Start at the Overview menu, then run the guided war-room tour.
 
-Without backend credentials the local run still works for the badge studio, scam-text analyzer, risk metrics, local board-briefing generation, and the usage-meter display; AI features show a "not configured" message instead of calling the backend.
+Without backend credentials the local run still works for the overview, checkups (security, firewall, device, cookie, password), playbooks, guides, manual checks, badge studio, scam-text analyzer, risk metrics, local briefing generation, local reports, FAQ, and the meter display; AI features show a "not configured" message instead of calling the backend.
 
 Hosted build (same code, backend configured): https://shieldpocket-ai-orcin.vercel.app
+
+## Phone demo
+
+On an iPhone, install the TestFlight build and open it in sample-data mode — no sign-in needed:
+
+https://testflight.apple.com/join/xHXyt2AR
+
+The video below also shows the phone app and the web app side by side. The AI features on the phone are the same event work documented in this repo.
 
 ## Backend setup (for your own deploy, not needed to judge)
 
