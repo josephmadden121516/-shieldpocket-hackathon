@@ -1,0 +1,22 @@
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  padding: 0.7rem 1rem;
+  background: var(--card);
+}
+
+.faq-question {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq-answer {
+  margin: 0.5rem 0 0.2rem;
+  color: var(--muted);
+}

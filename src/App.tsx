@@ -18,6 +18,7 @@ import { AttackTreeSimulator } from './components/AttackTreeSimulator'
 import { SyntheticAuditLab } from './components/SyntheticAuditLab'
 import { CyberInsuranceReadiness } from './components/CyberInsuranceReadiness'
 import { PhishDrillGenerator } from './components/PhishDrillGenerator'
+import { Faq } from './components/Faq'
 import CisoMetricsWidget from './CisoMetricsWidget'
 
 type Language = 'en' | 'es'
@@ -223,6 +224,11 @@ export default function App() {
       <section className="demo-section">
         <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
         <CisoMetricsWidget />
+      </section>
+
+      <section className="demo-section">
+        <h2>{isEs ? 'Preguntas frecuentes' : 'Frequently asked questions'}</h2>
+        <Faq language={language} />
       </section>
     </div>
   )
