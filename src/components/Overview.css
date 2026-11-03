@@ -6,14 +6,38 @@
   font-weight: 600;
 }
 
+.overview-select-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
 .overview-jump select {
   flex: 1;
   min-width: 12rem;
   font: inherit;
   border: 1px solid var(--line);
   border-radius: 0.5rem;
-  padding: 0.5rem 0.7rem;
+  padding: 0.55rem 2.25rem 0.55rem 0.75rem;
   background: var(--card);
+  min-width: 12rem;
+  max-width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.overview-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-left: 0.35rem solid transparent;
+  border-right: 0.35rem solid transparent;
+  border-top: 0.42rem solid currentColor;
+  transform: translateY(-35%);
+  pointer-events: none;
 }
 
 .overview-hint {
