@@ -133,40 +133,30 @@ export default function App() {
         <h2>{isEs ? 'Resumen' : 'Overview'}</h2>
         <p className="section-lede">
           {isEs
-            ? 'Todos los módulos en un lugar; salta a cualquiera.'
-            : 'Every module in one place; jump to any of them.'}
+            ? 'Elige una sección en el menú para saltar a ella.'
+            : 'Pick a section in the menu to jump to it.'}
         </p>
         <Overview language={language} />
       </section>
 
-      <section className="demo-section" id="war-room" aria-label={isEs ? 'Demostración guiada' : 'Guided demo'}>
-        <h2>{isEs ? 'Sala de guerra guiada' : 'Guided war room'}</h2>
-        <p className="section-lede">
-          {isEs
-            ? 'Un recorrido guionado que opera los módulos reales de principio a fin.'
-            : 'A scripted tour that drives the real modules end to end.'}
-        </p>
-        <WarRoomDemo language={language} />
+      <section className="demo-section" id="sophia-assistant">
+        <h2>{isEs ? 'Asistente Sophia' : 'Sophia assistant'}</h2>
+        <SophiaAssistant language={language} />
       </section>
 
-      <section className="demo-section" id="threat-digest">
-        <h2>{isEs ? 'Resumen diario' : 'Daily digest'}</h2>
-        <ThreatDigest language={language} reports={digestReports} activity={activity} />
+      <section className="demo-section" id="threat-analyzer">
+        <h2>{isEs ? 'Analizador de amenazas' : 'Threat analyzer'}</h2>
+        <ThreatAnalyzer language={language} />
       </section>
 
-      <section className="demo-section" id="cve-triage">
-        <h2>{isEs ? 'Priorización de CVE' : 'CVE triage'}</h2>
-        <CveTriageAssistant language={language} />
+      <section className="demo-section" id="api-usage">
+        <h2>{isEs ? 'Medidor de uso' : 'Usage meter'}</h2>
+        <UsageMeter language={language} />
       </section>
 
-      <section className="demo-section" id="patch-generator">
-        <h2>{isEs ? 'Propuestas de parche' : 'Patch proposals'}</h2>
-        <PatchGenerator language={language} />
-      </section>
-
-      <section className="demo-section" id="incident-timeline">
-        <h2>{isEs ? 'Reconstrucción de cronología' : 'Timeline reconstruction'}</h2>
-        <IncidentTimelineReconstructor language={language} />
+      <section className="demo-section" id="report-activity">
+        <h2>{isEs ? 'Reportar actividad' : 'Report activity'}</h2>
+        <ReportActivity language={language} />
       </section>
 
       <section className="demo-section" id="executive-board-briefing">
@@ -180,24 +170,9 @@ export default function App() {
         />
       </section>
 
-      <section className="demo-section" id="api-usage">
-        <h2>{isEs ? 'Medidor de uso' : 'Usage meter'}</h2>
-        <UsageMeter language={language} />
-      </section>
-
-      <section className="demo-section" id="phishing-game">
-        <h2>{isEs ? 'Juego: detecta el phishing' : 'Spot-the-phish game'}</h2>
-        <PhishingGame language={language} />
-      </section>
-
-      <section className="demo-section" id="link-checker">
-        <h2>{isEs ? 'Verificador de enlaces' : 'Link safety checker'}</h2>
-        <LinkSafetyChecker language={language} />
-      </section>
-
-      <section className="demo-section" id="scam-analyzer">
-        <h2>{isEs ? 'Analizador de mensajes' : 'Scam-text analyzer'}</h2>
-        <ScamTextAnalyzer language={language} />
+      <section className="demo-section" id="threat-digest">
+        <h2>{isEs ? 'Resumen diario' : 'Daily digest'}</h2>
+        <ThreatDigest language={language} reports={digestReports} activity={activity} />
       </section>
 
       <section className="demo-section" id="threat-watcher">
@@ -205,9 +180,24 @@ export default function App() {
         <ThreatWatcher language={language} />
       </section>
 
-      <section className="demo-section" id="badge-studio">
-        <h2>{isEs ? 'Estudio de insignias' : 'Badge studio'}</h2>
-        <BadgeStudio language={language} />
+      <section className="demo-section" id="risk-metrics">
+        <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
+        <CisoMetricsWidget />
+      </section>
+
+      <section className="demo-section" id="scam-analyzer">
+        <h2>{isEs ? 'Analizador de mensajes' : 'Scam-text analyzer'}</h2>
+        <ScamTextAnalyzer language={language} />
+      </section>
+
+      <section className="demo-section" id="screenshot-analyzer">
+        <h2>{isEs ? 'Análisis de captura' : 'Screenshot analysis'}</h2>
+        <ScreenshotAnalyzer language={language} />
+      </section>
+
+      <section className="demo-section" id="cve-triage">
+        <h2>{isEs ? 'Priorización de CVE' : 'CVE triage'}</h2>
+        <CveTriageAssistant language={language} />
       </section>
 
       <section className="demo-section" id="compliance-map">
@@ -226,59 +216,9 @@ export default function App() {
         <ComplianceFrameworkMapper language={language} assessment={assessmentValue} />
       </section>
 
-      <section className="demo-section" id="attack-simulator">
-        <h2>{isEs ? 'Simulador de ataque' : 'Attack simulator'}</h2>
-        <AttackTreeSimulator language={language} />
-      </section>
-
-      <section className="demo-section" id="audit-lab">
-        <h2>{isEs ? 'Laboratorio de auditoría' : 'Audit lab'}</h2>
-        <SyntheticAuditLab language={language} />
-      </section>
-
-      <section className="demo-section" id="insurance-readiness">
-        <h2>{isEs ? 'Preparación para ciberseguro' : 'Cyber-insurance readiness'}</h2>
-        <CyberInsuranceReadiness language={language} />
-      </section>
-
-      <section className="demo-section" id="phish-drills">
-        <h2>{isEs ? 'Simulacros de phishing' : 'Phishing drills'}</h2>
-        <PhishDrillGenerator language={language} />
-      </section>
-
-      <section className="demo-section" id="risk-metrics">
-        <h2>{isEs ? 'Métricas de riesgo' : 'Risk metrics'}</h2>
-        <CisoMetricsWidget />
-      </section>
-
-      <section className="demo-section" id="threat-analyzer">
-        <h2>{isEs ? 'Analizador de amenazas' : 'Threat analyzer'}</h2>
-        <ThreatAnalyzer language={language} />
-      </section>
-
-      <section className="demo-section" id="screenshot-analyzer">
-        <h2>{isEs ? 'Análisis de captura' : 'Screenshot analysis'}</h2>
-        <ScreenshotAnalyzer language={language} />
-      </section>
-
-      <section className="demo-section" id="report-activity">
-        <h2>{isEs ? 'Reportar actividad' : 'Report activity'}</h2>
-        <ReportActivity language={language} />
-      </section>
-
       <section className="demo-section" id="saved-reports">
         <h2>{isEs ? 'Informes guardados' : 'Saved reports'}</h2>
         <SavedReports language={language} />
-      </section>
-
-      <section className="demo-section" id="action-plan">
-        <h2>{isEs ? 'Plan de acción' : 'Action plan'}</h2>
-        <ActionPlan language={language} />
-      </section>
-
-      <section className="demo-section" id="sophia-assistant">
-        <h2>{isEs ? 'Asistente Sophia' : 'Sophia assistant'}</h2>
-        <SophiaAssistant language={language} />
       </section>
 
       <section className="demo-section" id="security-checkup">
@@ -286,9 +226,29 @@ export default function App() {
         <SecurityCheckup language={language} />
       </section>
 
+      <section className="demo-section" id="action-plan">
+        <h2>{isEs ? 'Plan de acción' : 'Action plan'}</h2>
+        <ActionPlan language={language} />
+      </section>
+
       <section className="demo-section" id="device-posture">
         <h2>{isEs ? 'Postura del dispositivo' : 'Device posture'}</h2>
         <DevicePosture language={language} />
+      </section>
+
+      <section className="demo-section" id="manual-checks">
+        <h2>{isEs ? 'Verificaciones manuales' : 'Manual checks'}</h2>
+        <ManualChecks language={language} />
+      </section>
+
+      <section className="demo-section" id="hardening-guides">
+        <h2>{isEs ? 'Guías de refuerzo' : 'Hardening guides'}</h2>
+        <HardeningGuides language={language} />
+      </section>
+
+      <section className="demo-section" id="badge-studio">
+        <h2>{isEs ? 'Estudio de insignias' : 'Badge studio'}</h2>
+        <BadgeStudio language={language} />
       </section>
 
       <section className="demo-section" id="firewall-checkup">
@@ -306,19 +266,59 @@ export default function App() {
         <PasswordChecker language={language} />
       </section>
 
-      <section className="demo-section" id="manual-checks">
-        <h2>{isEs ? 'Verificaciones manuales' : 'Manual checks'}</h2>
-        <ManualChecks language={language} />
-      </section>
-
-      <section className="demo-section" id="hardening-guides">
-        <h2>{isEs ? 'Guías de refuerzo' : 'Hardening guides'}</h2>
-        <HardeningGuides language={language} />
-      </section>
-
       <section className="demo-section" id="incident-kit">
         <h2>{isEs ? 'Kit de respuesta' : 'Incident response kit'}</h2>
         <IncidentResponseKit language={language} />
+      </section>
+
+      <section className="demo-section" id="patch-generator">
+        <h2>{isEs ? 'Propuestas de parche' : 'Patch proposals'}</h2>
+        <PatchGenerator language={language} />
+      </section>
+
+      <section className="demo-section" id="attack-simulator">
+        <h2>{isEs ? 'Simulador de ataque' : 'Attack simulator'}</h2>
+        <AttackTreeSimulator language={language} />
+      </section>
+
+      <section className="demo-section" id="audit-lab">
+        <h2>{isEs ? 'Laboratorio de auditoría' : 'Audit lab'}</h2>
+        <SyntheticAuditLab language={language} />
+      </section>
+
+      <section className="demo-section" id="phish-drills">
+        <h2>{isEs ? 'Simulacros de phishing' : 'Phishing drills'}</h2>
+        <PhishDrillGenerator language={language} />
+      </section>
+
+      <section className="demo-section" id="phishing-game">
+        <h2>{isEs ? 'Juego: detecta el phishing' : 'Spot-the-phish game'}</h2>
+        <PhishingGame language={language} />
+      </section>
+
+      <section className="demo-section" id="link-checker">
+        <h2>{isEs ? 'Verificador de enlaces' : 'Link safety checker'}</h2>
+        <LinkSafetyChecker language={language} />
+      </section>
+
+      <section className="demo-section" id="incident-timeline">
+        <h2>{isEs ? 'Reconstrucción de cronología' : 'Timeline reconstruction'}</h2>
+        <IncidentTimelineReconstructor language={language} />
+      </section>
+
+      <section className="demo-section" id="insurance-readiness">
+        <h2>{isEs ? 'Preparación para ciberseguro' : 'Cyber-insurance readiness'}</h2>
+        <CyberInsuranceReadiness language={language} />
+      </section>
+
+      <section className="demo-section" id="war-room" aria-label={isEs ? 'Demostración guiada' : 'Guided demo'}>
+        <h2>{isEs ? 'Sala de guerra guiada' : 'Guided war room'}</h2>
+        <p className="section-lede">
+          {isEs
+            ? 'Un recorrido guionado que opera los módulos reales de principio a fin.'
+            : 'A scripted tour that drives the real modules end to end.'}
+        </p>
+        <WarRoomDemo language={language} />
       </section>
 
       <section className="demo-section" id="faq">

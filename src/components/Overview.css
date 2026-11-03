@@ -1,43 +1,23 @@
 .overview-jump {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .overview-jump select {
+  flex: 1;
+  min-width: 12rem;
   font: inherit;
   border: 1px solid var(--line);
   border-radius: 0.5rem;
-  padding: 0.4rem 0.6rem;
+  padding: 0.5rem 0.7rem;
   background: var(--card);
-  max-width: 100%;
 }
 
-.overview-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
-  gap: 0.6rem;
-}
-
-.overview-grid a {
-  display: block;
-  border: 1px solid var(--line);
-  border-radius: 0.6rem;
-  padding: 0.6rem 0.8rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.overview-grid strong {
-  display: block;
-}
-
-.overview-grid span {
+.overview-hint {
   color: var(--muted);
   font-size: 0.9rem;
+  margin-bottom: 0;
 }
