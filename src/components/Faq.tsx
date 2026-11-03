@@ -108,6 +108,54 @@ const ENTRIES: FaqEntry[] = [
     answerEs:
       'Inglés y español en toda la app, incluidas las preguntas a Sophia y la narración hablada. Cambia cuando quieras con el botón EN/ES.',
   },
+  {
+    questionEn: 'How do I analyze a suspicious message?',
+    answerEn:
+      'Paste it into the threat analyzer and press Analyze. You get a defensive verdict, can ask Sophia follow-ups about it, and can save the report on this device.',
+    questionEs: '¿Cómo analizo un mensaje sospechoso?',
+    answerEs:
+      'Pégalo en el analizador de amenazas y pulsa Analizar. Recibes un veredicto defensivo, puedes preguntar a Sophia y guardar el informe en este dispositivo.',
+  },
+  {
+    questionEn: 'What happens to screenshots I analyze?',
+    answerEn:
+      'Only what you approve: pick an image, check the consent box, and analyze. The browser resizes it to 1600 px JPEG before sending; the image is never saved, only the verdict text if you save the report. Each analysis uses API credits.',
+    questionEs: '¿Qué pasa con mis capturas?',
+    answerEs:
+      'Solo lo que apruebas: eliges imagen, aceptas y analizas. El navegador la reduce a 1600 px JPEG antes de enviar; la imagen nunca se guarda, solo el texto si guardas el informe. Cada análisis usa créditos.',
+  },
+  {
+    questionEn: 'Where are saved reports kept?',
+    answerEn:
+      'Only in this browser, under Saved reports. Open any of them to reread it, delete the ones you do not need, and press Refresh list after saving elsewhere. Nothing syncs or uploads.',
+    questionEs: '¿Dónde quedan los informes guardados?',
+    answerEs:
+      'Solo en este navegador, en Informes guardados. Ábrelos para releer, borra los que sobren y pulsa Actualizar tras guardar en otra sección. Nada se sincroniza ni se sube.',
+  },
+  {
+    questionEn: 'Do checkups and playbooks remember progress?',
+    answerEn:
+      'Yes, on this device. Every checklist, checkup, and incident playbook saves its ticks locally and shows a progress count. Start over clears one list.',
+    questionEs: '¿Los listados recuerdan el progreso?',
+    answerEs:
+      'Sí, en este dispositivo. Cada lista, revisión y manual guarda sus marcas localmente y muestra el avance. Empezar de nuevo limpia una lista.',
+  },
+  {
+    questionEn: 'How do I talk to Sophia?',
+    answerEn:
+      'Type in the Sophia assistant, or press Voice and speak; the browser will ask for microphone permission. Replies can be read aloud, and every answer uses metered AI credits.',
+    questionEs: '¿Cómo hablo con Sophia?',
+    answerEs:
+      'Escribe en el asistente Sophia, o pulsa Voz y habla; el navegador pedirá permiso de micrófono. Las respuestas pueden leerse en voz alta y cada una usa créditos medidos.',
+  },
+  {
+    questionEn: 'What is the overview for?',
+    answerEn:
+      'It is the map of the whole app: a jump menu plus one card per section, so you can reach any module without scrolling the full page.',
+    questionEs: '¿Para qué es el resumen?',
+    answerEs:
+      'Es el mapa de toda la app: un menú de salto más una tarjeta por sección, para llegar a cualquier módulo sin recorrer la página.',
+  },
 ]
 
 export function Faq({ language }: FaqProps) {

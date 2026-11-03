@@ -24,6 +24,10 @@ daily cap. The project was built with the Muse Code coding agent.
 | `388353a` | Nov 2 | Spot-the-phish game, link checker, scam-text analyzer, threat watcher, badge studio |
 | `388353a` | Nov 2 | Compliance mapper, cyber-insurance readiness, attack simulator, audit lab, phishing drills, risk metrics |
 | `388353a` | Nov 2 | Edge functions (`analyze-threat`, `sophia-chat`, `generate-remediation`) on Muse Spark with live metering |
+| `6f5dd34` | Nov 2 | Frequently asked questions section (fresh bilingual content) |
+| `ef509a5` | Nov 3 | Overview dashboard with jump menu, local-state libs, new `threat` / `vision` / `actionplan` edge tasks |
+| `59fa64a` | Nov 3 | Local checkups: password, cookie/privacy, firewall, device posture, manual checks, hardening guides, security checkup, incident kit |
+| `615965d` | Nov 3 | Threat and screenshot analyzers, action plan, local activity reports and saved reports, Sophia voice assistant |
 
 ## Outside-event items reused
 
